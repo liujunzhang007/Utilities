@@ -31,8 +31,6 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//    HomeViewController *mainViewController = [[HomeViewController alloc]init];
-//    IMNavigationController *tabbar = [[IMNavigationController alloc]initWithRootViewController:mainViewController];
     IMTabbarController *tabbarC = [[IMTabbarController alloc]init];
     self.window.rootViewController = tabbarC;
     [self.window makeKeyWindow];

@@ -202,22 +202,6 @@ static FMDatabase *_fmdb;
 }
 
 
-
-- (void)initialDatabase{
-    BOOL executeUpdate = [_fmdb executeUpdate:@"CREATE TABLE IF NOT EXISTS t_messages (id integer PRIMARY KEY AUTOINCREMENT, name text NOT NULL, age integer NOT NULL, sex text NOT NULL);"];
-    
-    
-    int mark_student=1;
-    NSString *name = [NSString stringWithFormat:@"马冬梅%@",@(mark_student)];
-    int age = mark_student;
-    NSString *sex = @"女";
-    mark_student ++;
-    BOOL results = [_fmdb executeUpdate:@"INSERT INTO t_messages (name, age, sex) VALUES (?,?,?)",name,@(age),sex];
-//    BOOL result = [fmdb executeUpdateWithFormat:@"insert into t_student (name,age, sex) values (%@,%i,%@)",name,age,sex];
-//    BOOL result = [fmdb executeUpdate:@"INSERT INTO t_student(name,age,sex) VALUES  (?,?,?);" withArgumentsInArray:@[name,@(age),sex]];
-
-}
-
 /**
  查询符合条件的记录条数：@"SELECT COUNT( * ) FROM 'TABLE' WHERE name = '123' and age = '20' or address = 'beijing';
  查询按照id正序且符合条件的跳过前10条之后的50条：@"select * from 'TABLE' where name = '123' ORDER BY id ASC LIMIT 10, 50";   (ASC:正序；DESC:倒序)
